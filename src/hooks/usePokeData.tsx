@@ -26,7 +26,7 @@ export default function usePokemonData() {
 
     const [pokemonsData, setPokemonData] = useState<pokemonDataType[]>([])
 
-    const { data: pokemonBasedata } = useFetch<PokemonBaseData>({ url: 'https://pokeapi.co/api/v2/pokemon?limit=20' })
+    const { data: pokemonBasedata } = useFetch<PokemonBaseData>({ url: 'https://pokeapi.co/api/v2/pokemon?limit=450' })
 
     useEffect(() => {
         const fetchAllPokemon = async () => {
