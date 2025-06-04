@@ -1,0 +1,30 @@
+.favorite__cards {
+    display: grid;
+    justify-content: space-evenly;
+
+    grid-template-columns: repeat(5, 10rem);
+    width: 100%;
+    height: auto;
+    gap: 1rem;
+
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    background-color: var(--color-neutral-50);
+    
+}
+
+
+@media (max-width: 1024px) {
+    .content__cards {
+        grid-template-columns: repeat(2, 10rem);
+    }
+}
+
+@media (max-width: 600px) {
+    .content__cards {
+        grid-template-columns: repeat(1, 1fr); 
+        justify-content: center; 
+    }
+}

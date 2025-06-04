@@ -1,0 +1,159 @@
+@font-face {
+    font-family: 'pokemonPixelFont';
+    src: url('/public/assets/fonts/PokemonPixel.ttf');
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-area: header;
+    height: 4rem;
+    padding: 0 1rem;
+    background-color: var(--color-red-500);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 0.125rem solid var(--color-slate-400);
+    width: 100%;
+}
+
+.header__pageTitle {
+    font-family: 'pocketMonk';
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--color-neutral-50);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    margin: 0;
+}
+
+.header__pokemonSearchBar {
+    width: 30%;
+    max-width: 300px;
+    height: 2.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 1.25rem;
+    background-color: var(--color-neutral-50);
+    color: var(--color-gray-800);
+    font-size: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.header__pokemonSearchBar:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.header__pokemonSearchBar:focus {
+    outline: none;
+    width: 35%;
+    background-color: var(--color-neutral-100);
+    box-shadow: 0 0 0 0.2rem var(--color-red-300);
+}
+
+.header__pokemonSearchBar::placeholder {
+    color: var(--color-gray-400);
+    opacity: 1;
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+
+.header__pokemonSearchBar:focus::placeholder {
+    transform: translateY(-0.4rem);
+    font-size: 0.85rem;
+    color: var(--color-red-300);
+}
+/**/
+.header__navButtons {
+    font-family: pokemonPixelFont;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+}
+
+.header__navButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-neutral-50);
+    color: var(--color-red-600);
+    border: 0.0625rem solid var(--color-red-300);
+    border-radius: 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+    min-width: -webkit-fill-available;
+    min-width: fit-content;
+}
+
+.header__navButton:hover {
+    background-color: var(--color-red-100);
+    color: var(--color-red-700);
+    border-color: var(--color-red-400);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transform: translateY(-0.0625rem);
+}
+
+.header__navButton:active {
+    background-color: var(--color-red-200);
+    color: var(--color-red-800);
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Variante para botón activo/seleccionado */
+.header__navButton--active {
+    background-color: var(--color-red-600);
+    color: var(--color-neutral-50);
+    border-color: var(--color-red-700);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header__navButton--active:hover {
+    background-color: var(--color-red-700);
+    color: var(--color-neutral-50);
+    border-color: var(--color-red-800);
+}
+
+
+@media (max-width: 1024px) {
+    .header__pageTitle {
+        font-size: 1.75rem;
+    }
+
+    .header__pokemonSearchBar {
+        width: 40%;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .header__pageTitle {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .header__pokemonSearchBar {
+        width: 100%;
+        max-width: none;
+        height: 2rem;
+        padding: 0.25rem 0.75rem;
+        font-size: 0.9rem;
+    }
+}
